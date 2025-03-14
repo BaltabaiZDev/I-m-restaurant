@@ -3,7 +3,7 @@ description: "I'm restaurant"
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.8.0-149.0.dev
+  sdk: ^3.7.0-149.0.dev
 
 dependencies:
   flutter:
@@ -18,13 +18,13 @@ dependencies:
   gpt_markdown: ^1.0.12
   icons_launcher: ^3.0.1
   url_launcher: ^6.3.1
+  flutter_native_splash: ^2.4.5
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_native_splash: ^2.4.5
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
