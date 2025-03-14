@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Splash экранындағы фон түсі -->
+    <color name="launch_background">#F9BD36</color>
+
+    <!-- Қосымша іске қосылған кезде бастапқы экранда көрсетілетін стиль -->
+    <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <!-- Негізгі splash фоны ретінде launch_background түсін қолданамыз -->
+        <item name="android:windowBackground">@color/launch_background</item>
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
+
+    <!-- Flutter UI алғашқы рет салынған соң қолданылатын негізгі тақырып -->
+    <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">?android:colorBackground</item>
+    </style>
+</resources>
