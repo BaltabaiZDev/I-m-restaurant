@@ -17,6 +17,7 @@ class LogoutConfirmationSheet extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       duration: Duration(milliseconds: 1000),
       child: Column(
+
         children: [
           const SizedBox(height: 8),
           const Text("Выйти?", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
