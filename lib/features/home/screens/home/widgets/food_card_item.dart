@@ -4,25 +4,21 @@ class FoodCardItem extends StatelessWidget {
   final String image;
   final String nameOfFood;
   final String time;
+  final String? price;
 
-  const FoodCardItem({super.key, required this.image, required this.nameOfFood, required this.time});
+  const FoodCardItem({super.key, required this.image, required this.nameOfFood, required this.time, this.price});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(left: 20),
-      width: 240,
+      width: 190,
       height: 200,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.25),
-            blurRadius: 4,
-            spreadRadius: 2,
-            offset: Offset(0, 10),
-          ),
+          BoxShadow(color: Colors.black.withValues(alpha: 0.25), blurRadius: 4, spreadRadius: 2, offset: Offset(0, 10)),
         ],
       ),
       child: Stack(
@@ -77,6 +73,12 @@ class FoodCardItem extends StatelessWidget {
               child: const Icon(Icons.play_arrow, color: Colors.white, size: 18),
             ),
           ),
+          if (price != null)
+            Positioned(
+              bottom: 12,
+              right: 12,
+              child: Text(price!, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 12)),
+            ),
         ],
       ),
     );

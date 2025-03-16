@@ -49,39 +49,41 @@ class WelcomeScreen extends StatelessWidget {
               if (!controller.showStartButtons.value)
                 Expanded(
                   child: AnimatedSlide(
-                    // Slide in from bottom: initial offset (0, 1) moves to (0, 0)
                     offset: controller.showSecondImage.value ? const Offset(0, 0) : const Offset(0, 2),
                     duration: const Duration(milliseconds: 600),
                     curve: Curves.linear,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text("Выбирайте язык", style: TTextStyles.h4.copyWith(color: TColors.typographyBlack)),
-                          const SizedBox(height: 10),
-                          Text("Совершайте заказы и получайте\nдополнительные бонусы", textAlign: TextAlign.center, style: TTextStyles.body1.copyWith(color: TColors.typography80)),
-                          const SizedBox(height: 50),
-                          ChoiceButtons(
-                            language: "Қазақша",
-                            onPressed: () {
-                              controller.showStartButtons.value = true;
-                            },
-                            backgroundColor: const Color(0xFFF9BD36),
-                          ),
-                          const SizedBox(height: 20),
-                          ChoiceButtons(
-                            language: "Русский",
-                            onPressed: () {
-                              controller.showStartButtons.value = true;
-                            },
-                            backgroundColor: const Color(0xFFE52723),
-                          ),
-                        ],
+                    child: SingleChildScrollView(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text("Выбирайте язык", style: TTextStyles.h4.copyWith(color: TColors.typographyBlack)),
+                            const SizedBox(height: 10),
+                            Text("Совершайте заказы и получайте\nдополнительные бонусы", textAlign: TextAlign.center, style: TTextStyles.body1.copyWith(color: TColors.typography80)),
+                            const SizedBox(height: 40),
+                            ChoiceButtons(
+                              language: "Қазақша",
+                              onPressed: () {
+                                controller.showStartButtons.value = true;
+                              },
+                              backgroundColor: const Color(0xFFF9BD36),
+                            ),
+                            const SizedBox(height: 20),
+                            ChoiceButtons(
+                              language: "Русский",
+                              onPressed: () {
+                                controller.showStartButtons.value = true;
+                              },
+                              backgroundColor: const Color(0xFFE52723),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
+
               if (controller.showStartButtons.value)
                 Expanded(
                   child: Padding(
@@ -91,8 +93,8 @@ class WelcomeScreen extends StatelessWidget {
                       children: [
                         Text("Войдите в профиль", style: TTextStyles.h4.copyWith(color: TColors.typographyBlack)),
                         const SizedBox(height: 10),
-                        Text("Совершайте заказы и получайте\nдополнительные бонусы", textAlign: TextAlign.center, style: TTextStyles.body1.copyWith(color: TColors.typography80)),
-                        const SizedBox(height: 50),
+                        Text("Совершайте заказы и получайте дополнительные бонусы", textAlign: TextAlign.center, style: TTextStyles.body1.copyWith(color: TColors.typography80)),
+                        const SizedBox(height: 40),
                         ChoiceButtons(language: "Начать", onPressed: () => Get.to(() => const AuthScreen()), backgroundColor: const Color(0xFFF9BD36)),
                         const SizedBox(height: 20),
                         ChoiceButtons(language: "Регистрация", onPressed: () => Get.to(() => const AuthScreen()), backgroundColor: const Color(0xFFE52723)),

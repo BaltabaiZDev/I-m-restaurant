@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:i_am_restaurant/features/home/screens/home/widgets/second_build_item.dart';
+import 'package:get/get.dart';
 import 'package:i_am_restaurant/utils/constants/colors.dart';
 import 'package:i_am_restaurant/utils/constants/text_styles.dart';
+import '../../../controllers/popular_item_controller.dart';
+import 'second_build_item.dart';
 
 class PopularItem extends StatelessWidget {
-  const PopularItem({super.key});
+  PopularItem({super.key});
+
+  final controller = Get.put(PopularItemController());
+
+  final List<String> imagePaths = [
+    'assets/images/img.png',
+    'assets/images/img_1.png',
+    'assets/images/img_2.png',
+    'assets/images/img_3.png',
+  ];
 
   @override
   Widget build(BuildContext context) {
-    final List<String> imagePaths = [
-      'assets/images/img.png',
-      'assets/images/img_1.png',
-      'assets/images/img_2.png',
-      'assets/images/img_3.png',
-    ];
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -22,7 +26,10 @@ class PopularItem extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 25.0),
           child: Text(
             "Самые популярные",
-            style: TTextStyles.h5.copyWith(color: TColors.typographyBlack, fontWeight: FontWeight.bold),
+            style: TTextStyles.h5.copyWith(
+              color: TColors.typographyBlack,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
         const SizedBox(height: 15),
@@ -31,10 +38,11 @@ class PopularItem extends StatelessWidget {
           child: Row(
             children: [
               const SizedBox(width: 15),
-              ...imagePaths.map((image) {
-                return SecondBuildItem(image: image);
+              ...imagePaths.asMap().entries.map((entry) {
+                int idx = entry.key;
+                String img = entry.value;
+                return SecondBuildItem(image: img, index: idx);
               }),
-
               const SizedBox(width: 25),
             ],
           ),

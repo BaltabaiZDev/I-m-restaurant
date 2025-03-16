@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:i_am_restaurant/features/home/screens/home/widgets/banner_item.dart';
-import 'package:i_am_restaurant/features/home/screens/home/widgets/header.dart';
+import 'package:i_am_restaurant/common/widgets/header.dart';
 import 'package:i_am_restaurant/features/home/screens/home/widgets/popular_item.dart';
 import 'package:i_am_restaurant/features/home/screens/home/widgets/recommend_item.dart';
 import 'package:i_am_restaurant/utils/constants/colors.dart';
@@ -12,8 +12,10 @@ class HomeScreen extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: TColors.secondary,
-
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: TColors.secondary,
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -23,13 +25,13 @@ class HomeScreen extends StatelessWidget {
                 color: Colors.white,
                 child: SingleChildScrollView(
                   child: Column(
-                    children: const [
-                      SizedBox(height: 20),
-                      BannerItem(),
+                    children: [
+                      const SizedBox(height: 20),
+                      const BannerItem(),
                       PopularItem(),
-                      SizedBox(height: 20),
-                      RecommendItem(),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
+                      const RecommendItem(),
+                      const SizedBox(height: 20),
                     ],
                   ),
                 ),

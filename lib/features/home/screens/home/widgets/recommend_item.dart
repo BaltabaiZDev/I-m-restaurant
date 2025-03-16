@@ -24,7 +24,7 @@ class RecommendItem extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: [
-              FoodCardItem(image: "assets/images/img_4.png", nameOfFood: "Chicken qazan", time: "12 Minutes"),
+              FoodCardItem(image: "assets/images/img_4.png", nameOfFood: "Chicken qazan", time: "12 Minutes",),
               FoodCardItem(image: "assets/images/img_5.png", nameOfFood: "Цезарь рол", time: "6 Minutes"),
               FoodCardItem(image: "assets/images/img_4.png", nameOfFood: "Chicken qazan", time: "12 Minutes"),
               const SizedBox(width: 25),
