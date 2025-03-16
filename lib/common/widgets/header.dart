@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:i_am_restaurant/features/home/screens/profile/profile.dart';
 import 'package:i_am_restaurant/utils/constants/colors.dart';
 import 'package:i_am_restaurant/utils/constants/text_styles.dart';
 
 import '../../features/home/screens/home/widgets/bottom_wave_clipper.dart';
-
+import '../../features/settings/screens/dashboard/dashboard.dart';
 class Header extends StatelessWidget {
   const Header({super.key});
 
@@ -23,7 +22,7 @@ class Header extends StatelessWidget {
                 Text("Hi Zhanibek", style: TTextStyles.h5.copyWith(color: TColors.typographyBlack)),
                 const Spacer(),
                 GestureDetector(
-                  onTap: () => Get.to(() => ProfileScreen()),
+                  onTap: () => Get.to(() => DashboardScreen()),
                   child: const Image(image: AssetImage("assets/images/user.png"), height: 35, width: 32),
                 ),
               ],

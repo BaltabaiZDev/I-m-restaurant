@@ -5,6 +5,7 @@ import '../controllers/transition_controller.dart';
 
 class TransitionScreen extends StatelessWidget {
   final String name;
+
   const TransitionScreen({super.key, required this.name});
 
   @override
@@ -26,9 +27,7 @@ class TransitionScreen extends StatelessWidget {
               opacity: controller.overlayOpacity.value,
               duration: const Duration(milliseconds: 300),
               curve: Curves.easeInOut,
-              child: Container(
-                color: Colors.black,
-              ),
+              child: Container(color: Colors.black),
             );
           }),
 
@@ -40,11 +39,7 @@ class TransitionScreen extends StatelessWidget {
               child: Center(
                 child: Text(
                   'Welcome, ${controller.name}!',
-                  style: const TextStyle(
-                    fontSize: 24,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: const TextStyle(fontSize: 24, color: Colors.white, fontWeight: FontWeight.bold),
                 ),
               ),
             );
