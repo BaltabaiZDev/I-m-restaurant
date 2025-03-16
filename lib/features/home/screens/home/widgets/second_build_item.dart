@@ -14,7 +14,15 @@ class SecondBuildItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => controller.onItemTapped(index),
+      onTapDown: (details) {
+        controller.onItemTapped(index);
+      },
+      onTapUp: (details) {
+        controller.onItemTapCancel();
+      },
+      onTapCancel: () {
+        controller.onItemTapCancel();
+      },
       child: Obx(
             () => AnimatedScale(
           scale: controller.isSelected(index) ? 0.9 : 1.0,
