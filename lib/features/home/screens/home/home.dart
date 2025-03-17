@@ -13,8 +13,11 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
+        surfaceTintColor: Colors.transparent,
+        shadowColor: Colors.transparent,
         automaticallyImplyLeading: false,
-        backgroundColor: TColors.secondary,
+        backgroundColor: Color(0xFFFCB614),
       ),
       body: SafeArea(
         child: Column(
