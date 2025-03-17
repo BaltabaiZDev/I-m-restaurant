@@ -33,7 +33,6 @@ class BuildSMS extends StatelessWidget {
         ),
         const SizedBox(height: 40),
 
-        // 4 OTP ұяшығы
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -69,7 +68,6 @@ class BuildSMS extends StatelessWidget {
         ),
         const SizedBox(height: 25),
 
-        // "Resend Code" тек барлық ұяшық толмаған кезде ғана көрсетеміз
         Obx(
           () =>
               controller.isCodeComplete.value
@@ -81,7 +79,6 @@ class BuildSMS extends StatelessWidget {
         ),
         const SizedBox(height: 200),
 
-        // Батырма
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 28),
           child: SizedBox(
@@ -91,10 +88,7 @@ class BuildSMS extends StatelessWidget {
               () => ElevatedButton(
                 onPressed: controller.onSubmitCode,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor:
-                      controller.isCodeComplete.value
-                          ? const Color(0xffE52723) // Егер 4 сан толса -> қызыл
-                          : const Color(0xffFDE1A1), // Әйтпесе -> сарғыш
+                  backgroundColor: controller.isCodeComplete.value ? const Color(0xffE52723) : const Color(0xffFDE1A1),
                   foregroundColor: controller.isCodeComplete.value ? Colors.white : Colors.black,
                   padding: const EdgeInsets.symmetric(vertical: 14),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),

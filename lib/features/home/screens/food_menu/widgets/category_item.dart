@@ -7,17 +7,10 @@ class CategoryItem extends StatelessWidget {
   final bool isSelected;
   final VoidCallback? onTap;
 
-  const CategoryItem({
-    super.key,
-    required this.iconPath,
-    required this.label,
-    this.isSelected = false,
-    this.onTap,
-  });
+  const CategoryItem({super.key, required this.iconPath, required this.label, this.isSelected = false, this.onTap});
 
   @override
   Widget build(BuildContext context) {
-
     final double containerHeight = isSelected ? 45 : 40;
 
     final double iconSize = isSelected ? 40 : 32;
@@ -30,7 +23,6 @@ class CategoryItem extends StatelessWidget {
       borderRadius: BorderRadius.circular(20),
       onTap: onTap,
       child: SizedBox(
-
         height: 50,
 
         child: Center(
@@ -40,7 +32,7 @@ class CategoryItem extends StatelessWidget {
 
             height: containerHeight,
 
-            padding:  EdgeInsets.symmetric(horizontal: isSelected ? 16 : 12),
+            padding: EdgeInsets.symmetric(horizontal: isSelected ? 16 : 12),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: TColors.secondary,
@@ -49,30 +41,14 @@ class CategoryItem extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-
                 Container(
                   width: iconSize,
                   height: iconSize,
-                  decoration: BoxDecoration(
-                    color: TColors.secondary,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Center(
-                    child: Image.asset(
-                      iconPath,
-                      width: iconSize - 8,
-                      height: iconSize - 8,
-                    ),
-                  ),
+                  decoration: BoxDecoration(color: TColors.secondary, shape: BoxShape.circle),
+                  child: Center(child: Image.asset(iconPath, width: iconSize - 8, height: iconSize - 8)),
                 ),
                 const SizedBox(width: 8),
-                Text(
-                  label,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: isSelected ? 16 : 14,
-                  ),
-                ),
+                Text(label, style: TextStyle(color: Colors.black, fontSize: isSelected ? 16 : 14)),
               ],
             ),
           ),

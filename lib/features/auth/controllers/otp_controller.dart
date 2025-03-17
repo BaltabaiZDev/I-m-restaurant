@@ -4,25 +4,20 @@ import 'package:get/get.dart';
 import '../screens/transition.dart';
 
 class OtpController extends GetxController {
-  // 4 TextEditingController
   final digit1 = TextEditingController();
   final digit2 = TextEditingController();
   final digit3 = TextEditingController();
   final digit4 = TextEditingController();
 
-  // 4 FocusNode
   final fn1 = FocusNode();
   final fn2 = FocusNode();
   final fn3 = FocusNode();
   final fn4 = FocusNode();
 
-  // Егер барлық ұяшық толса, true болады
   var isCodeComplete = false.obs;
 
-  // Код дұрыс енгізілгеннен кейін true болатын RxBool
   var isCodeVerified = false.obs;
 
-  // Аты-жөн енгізуге арналған контроллер
   final nameController = TextEditingController();
 
   @override
@@ -47,22 +42,18 @@ class OtpController extends GetxController {
     super.onClose();
   }
 
-  /// Әрбір OTP ұяшығына сан енгізілгенде немесе жойылғанда шақырылады
   void onDigitChanged(
-      TextEditingController textController,
-      FocusNode currentFocus,
-      FocusNode? previousFocus,
-      FocusNode? nextFocus,
-      String value,
-      ) {
-    // 1 символ енгізілсе -> келесі фокус
+    TextEditingController textController,
+    FocusNode currentFocus,
+    FocusNode? previousFocus,
+    FocusNode? nextFocus,
+    String value,
+  ) {
     if (value.length == 1) {
       if (nextFocus != null) {
         nextFocus.requestFocus();
       }
-    }
-    // Символ өшірілсе -> алдыңғы фокус
-    else if (value.isEmpty) {
+    } else if (value.isEmpty) {
       if (previousFocus != null) {
         previousFocus.requestFocus();
       }
@@ -70,42 +61,33 @@ class OtpController extends GetxController {
     _checkCodeComplete();
   }
 
-  /// 4 ұяшық толы ма тексереді
   void _checkCodeComplete() {
-    isCodeComplete.value = digit1.text.isNotEmpty &&
-        digit2.text.isNotEmpty &&
-        digit3.text.isNotEmpty &&
-        digit4.text.isNotEmpty;
+    isCodeComplete.value =
+        digit1.text.isNotEmpty && digit2.text.isNotEmpty && digit3.text.isNotEmpty && digit4.text.isNotEmpty;
   }
 
-  /// "Проверить"/"Далее" батырмасы басылғанда
   void onSubmitCode() {
     final code = digit1.text + digit2.text + digit3.text + digit4.text;
     if (code.length == 4) {
-      // Мұнда код тексеру логикасы
-      // Егер код дұрыс болса, аты-жөн формасын көрсетеміз
       isCodeVerified.value = true;
     } else {
       Get.snackbar('Қате', '4 цифр енгізіңіз');
     }
   }
 
-  /// "Resend Code" басылғанда
   void resendCode() {
     Get.snackbar('SMS', 'Код қайта жіберілді');
   }
+
   void onCheckName() {
     final name = nameController.text.trim();
     if (name.isNotEmpty) {
-      // WelcomeTransitionScreen-ге өтеміз
       Get.to(() => TransitionScreen(name: name));
     } else {
       Get.snackbar("Ескерту", "Атыңызды енгізіңіз");
     }
   }
 
-
-  /// Артқа қайту батырмасы
   void onBackPressed() {
     if (isCodeVerified.value) {
       isCodeVerified.value = false;
@@ -116,7 +98,6 @@ class OtpController extends GetxController {
       _checkCodeComplete();
       fn1.requestFocus();
     } else {
-      // Алдындағы экранға оралу
       Get.back();
     }
   }

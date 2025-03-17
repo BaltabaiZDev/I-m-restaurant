@@ -15,12 +15,7 @@ class TransitionScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Positioned.fill(
-            child: Image.asset(
-              'assets/images/7.png', // өзіңіздегі сурет жолы
-              fit: BoxFit.cover,
-            ),
-          ),
+          Positioned.fill(child: Image.asset('assets/images/7.png', fit: BoxFit.cover)),
 
           Obx(() {
             return AnimatedOpacity(

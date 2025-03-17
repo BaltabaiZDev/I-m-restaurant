@@ -24,7 +24,7 @@ class SecondBuildItem extends StatelessWidget {
         controller.onItemTapCancel();
       },
       child: Obx(
-            () => AnimatedScale(
+        () => AnimatedScale(
           scale: controller.isSelected(index) ? 0.9 : 1.0,
           duration: const Duration(milliseconds: 150),
           child: Container(
@@ -36,17 +36,14 @@ class SecondBuildItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.withOpacity(0.2),
+                  color: Colors.grey.withValues(alpha: 0.2),
                   spreadRadius: 2,
                   blurRadius: 5,
                   offset: const Offset(0, 3),
                 ),
               ],
             ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Image.asset(image, fit: BoxFit.cover),
-            ),
+            child: ClipRRect(borderRadius: BorderRadius.circular(12), child: Image.asset(image, fit: BoxFit.cover)),
           ),
         ),
       ),

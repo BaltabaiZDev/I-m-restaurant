@@ -11,9 +11,9 @@ class AuthScreen extends StatelessWidget {
     final controller = Get.put(AuthController());
     return Scaffold(
       backgroundColor: Colors.transparent,
-      resizeToAvoidBottomInset: true, // <-- маңызды
+      resizeToAvoidBottomInset: true,
       body: Container(
-        height: MediaQuery.of(context).size.height, // маңызды
+        height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -27,12 +27,12 @@ class AuthScreen extends StatelessWidget {
           child: Stack(
             children: [
               SingleChildScrollView(
-                padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom), // <-- маңызды
+                padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     const SizedBox(height: 20),
-                    // Сурет
+
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: Image.asset(
@@ -64,7 +64,6 @@ class AuthScreen extends StatelessWidget {
                               child: TextField(
                                 style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                                 onChanged: (value) {
-                                  // Егер 10 сан енгізілсе, isPhoneComplete true болады
                                   if (value.trim().length == 10) {
                                     controller.isPhoneComplete.value = true;
                                   } else {
@@ -81,12 +80,9 @@ class AuthScreen extends StatelessWidget {
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: 'Телефон',
-                                  // Сурет suffix-те Obx арқылы өзгеріп отырады
                                   suffix: Obx(
                                     () => Image.asset(
-                                      controller.isPhoneComplete.value
-                                          ? 'assets/images/6.png' // 10 сан болғанда жаңа сурет
-                                          : 'assets/images/5.png', // әдепкі сурет
+                                      controller.isPhoneComplete.value ? 'assets/images/6.png' : 'assets/images/5.png',
                                       height: 22,
                                       width: 22,
                                     ),
@@ -119,7 +115,6 @@ class AuthScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              // Арроу батырмасы: егер controller.showStartButtons true болса көрсетіледі.
               Obx(
                 () =>
                     controller.showStartButtons.value

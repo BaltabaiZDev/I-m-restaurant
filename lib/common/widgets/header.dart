@@ -11,9 +11,9 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipPath(
-      clipper: BottomWaveClipper(), // Төменгі жағын толқын тәрізді қиады
+      clipper: BottomWaveClipper(),
       child: Container(
-        color: const Color(0xFFFCB614), // Сарғыш фон (өзгертуіңізге болады)
+        color: const Color(0xFFFCB614),
         padding: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
         child: Column(
           children: [

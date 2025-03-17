@@ -20,16 +20,10 @@ class LogoutConfirmationSheet extends StatelessWidget {
           Container(
             width: 57,
             height: 5,
-            decoration: BoxDecoration(
-              color: Colors.grey,
-              borderRadius: BorderRadius.circular(2),
-            ),
+            decoration: BoxDecoration(color: Colors.grey, borderRadius: BorderRadius.circular(2)),
           ),
           const SizedBox(height: 40),
-          const Text(
-            "Выйти?",
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-          ),
+          const Text("Выйти?", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
           const SizedBox(height: 40),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -39,9 +33,7 @@ class LogoutConfirmationSheet extends StatelessWidget {
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.red,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                     ),
                     onPressed: () {
                       onConfirm();
@@ -51,11 +43,7 @@ class LogoutConfirmationSheet extends StatelessWidget {
                       alignment: Alignment.center,
                       child: const Text(
                         "Да",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                        ),
+                        style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w600),
                       ),
                     ),
                   ),
@@ -65,12 +53,9 @@ class LogoutConfirmationSheet extends StatelessWidget {
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.red,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                     ),
                     onPressed: () {
-
                       Navigator.pop(context);
                     },
                     child: Container(
@@ -78,11 +63,7 @@ class LogoutConfirmationSheet extends StatelessWidget {
                       alignment: Alignment.center,
                       child: const Text(
                         "Нет",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                        ),
+                        style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w600),
                       ),
                     ),
                   ),

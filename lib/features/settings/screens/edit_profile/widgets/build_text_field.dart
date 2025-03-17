@@ -21,13 +21,7 @@ class BuildTextField extends StatelessWidget {
           decoration: InputDecoration(
             filled: true,
             fillColor: const Color(0xffF7F8FB),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-              borderSide: BorderSide.none, // Сыртқы сызықты алып тастаймыз
-            ),
-
-
-
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: BorderSide.none),
 
             contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
           ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:i_am_restaurant/utils/constants/colors.dart';
 import 'package:i_am_restaurant/utils/constants/text_styles.dart';
+
 import '../../../controllers/popular_item_controller.dart';
 import 'second_build_item.dart';
 
@@ -26,10 +27,7 @@ class PopularItem extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 25.0),
           child: Text(
             "Самые популярные",
-            style: TTextStyles.h5.copyWith(
-              color: TColors.typographyBlack,
-              fontWeight: FontWeight.bold,
-            ),
+            style: TTextStyles.h5.copyWith(color: TColors.typographyBlack, fontWeight: FontWeight.bold),
           ),
         ),
         const SizedBox(height: 15),
